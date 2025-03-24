@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Crush! Do You Like Me?</title>
+    <title>Smart Kid Confession</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2 id="question">Hi Crush! Do you like me?</h2>
-        <div id="buttons">
-            <button class="button yes-button" onclick="acceptLove()">Yes 💖</button>
-            <button class="button no-button" onclick="multiplyNo(this)">No 💔</button>
+        <h2 id="question">Do you like me?</h2>
+        <div id="button-container">
+            <button id="yes-btn" onclick="sayYes()">Yes</button>
+            <div id="no-container">
+                <button class="no-btn" onclick="addNo()">No</button>
+            </div>
         </div>
+        <div id="image-container"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
