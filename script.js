@@ -1,13 +1,4 @@
 let noCount = 0;
-let images = [
-    "images (4).jpeg",
-    "images (3).jpeg",
-    "c664add2a9b3b05118dcb453c7a6d177.jpg",
-    "8248857610db7251980522a5656b8009.jpg",
-    "746d22074e490050b11dd15c43b5cb96.jpg",
-    "d4248382b71ea3da1f3fa07f8844fe39.jpg",
-    "6254609c996571a1488e46d1cc702bb5.jpg"
-];
 
 function addNo() {
     noCount++;
@@ -21,26 +12,22 @@ function addNo() {
         newNo.innerText = "No";
         newNo.classList.add("no-btn");
 
-        // Random positioning
-        let x = Math.random() * 300 - 150;
-        let y = Math.random() * 200 - 100;
+        // Generate random positions **but avoid covering the question & "Yes" button**
+        let x = Math.random() * 300 - 150; // Random horizontal shift
+        let y = Math.random() * 100 + 50;  // Random vertical shift below the question
 
-        newNo.style.transform = `translate(${x}px, ${y}px)`;
+        newNo.style.position = "absolute";
+        newNo.style.left = `calc(50% + ${x}px)`;
+        newNo.style.top = `calc(50% + ${y}px)`;
 
         newNo.onclick = addNo;
         noContainer.appendChild(newNo);
     }
-
-    // Reveal images one by one
-    if (noCount <= images.length) {
-        let imgContainer = document.getElementById("image-container");
-        let newImg = document.createElement("img");
-        newImg.src = images[noCount - 1];
-        newImg.style.display = "block";
-        imgContainer.appendChild(newImg);
-    }
 }
 
 function sayYes() {
-    document.body.innerHTML = "<h1>DAHIL JAN, HART HART KA SAKIN! 💖</h1>";
+    document.body.innerHTML = `
+        <h1 class="celebration-text">DAHIL JAN, HART HART KA SAKIN! 💖</h1>
+    `;
+    document.body.classList.add("celebration");
 }
