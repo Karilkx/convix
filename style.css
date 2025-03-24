@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #fce4ec;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
 }
@@ -10,36 +10,44 @@ body {
     margin-top: 50px;
 }
 
-.button {
-    padding: 12px 24px;
-    font-size: 18px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+#question {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-.button:hover {
-    transform: scale(1.1);
+#button-container {
+    position: relative;
+    display: inline-block;
 }
 
-.yes-button {
+#yes-btn {
     background-color: #ff4081;
     color: white;
-    animation: glow 1s infinite alternate;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-@keyframes glow {
-    0% { box-shadow: 0 0 5px #ff4081; }
-    100% { box-shadow: 0 0 20px #ff4081; }
+#yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.8);
 }
 
-.no-button {
-    background-color: #ff6961;
+.no-btn {
+    background-color: #bbb;
+    color: black;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
     position: absolute;
 }
 
-.no-button:hover {
-    background-color: #d32f2f;
+#image-container img {
+    width: 150px;
+    display: none;
+    margin-top: 20px;
 }
